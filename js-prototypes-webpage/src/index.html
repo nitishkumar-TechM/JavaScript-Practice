@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prototypes</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Understanding JavaScript Prototypes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>What is a Prototype?</h2>
+            <p>In JavaScript, a prototype is an object from which other objects inherit properties and methods. It plays a crucial role in the language's inheritance model, allowing objects to share behaviors and properties efficiently.</p>
+        </section>
+        <section>
+            <h2>How Prototypes Work</h2>
+            <h3>1. Prototype Property</h3>
+            <p>When you create a function in JavaScript, it automatically gets a <code>prototype</code> property. This property is an object that contains a <code>constructor</code> property pointing back to the function.</p>
+            <pre><code>function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    console.log(`Hello, my name is ${this.name}`);
+};</code></pre>
+            <h3>2. Prototype Chain</h3>
+            <p>When you access a property or method on an object, JavaScript first looks for it on the object itself. If it doesn't find it, it looks up the prototype chain until it finds the property or reaches the end of the chain.</p>
+            <pre><code>const john = new Person('John');
+john.greet(); // Hello, my name is John</code></pre>
+            <p>In this example, <code>john</code> doesn't have a <code>greet</code> method directly, but it inherits it from <code>Person.prototype</code>.</p>
+            <h3>3. Inheritance</h3>
+            <p>Prototypes allow for inheritance. You can create a new object that inherits properties and methods from another object.</p>
+            <pre><code>function Employee(name, jobTitle) {
+    Person.call(this, name);
+    this.jobTitle = jobTitle;
+}
+
+Employee.prototype = Object.create(Person.prototype);
+Employee.prototype.constructor = Employee;
+
+Employee.prototype.work = function() {
+    console.log(`${this.name} is working as a ${this.jobTitle}`);
+};
+
+const jane = new Employee('Jane', 'Developer');
+jane.greet(); // Hello, my name is Jane
+jane.work();  // Jane is working as a Developer</code></pre>
+        </section>
+        <section>
+            <h2>Advantages of Using Prototypes</h2>
+            <ul>
+                <li><strong>Memory Efficiency:</strong> Methods are shared among all instances, saving memory.</li>
+                <li><strong>Dynamic Behavior:</strong> You can add or modify methods and properties at runtime.</li>
+                <li><strong>Inheritance:</strong> Prototypes provide a simple way to implement inheritance.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Prototype vs. Class</h2>
+            <p>While prototypes are the traditional way of handling inheritance in JavaScript, ES6 introduced classes, which provide a more familiar and structured syntax for creating objects and handling inheritance. However, under the hood, classes still use prototypes.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Prototypes are a fundamental part of JavaScript's object-oriented nature, enabling inheritance and method sharing. Understanding prototypes helps you write more efficient and maintainable code.</p>
+        </section>
+    </main>
+    <footer>
+        <p>If you have any specific questions about prototypes or need further clarification, feel free to ask!</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
