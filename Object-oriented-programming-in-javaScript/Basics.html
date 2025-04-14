@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP in JS</title>
+</head>
+<body>
+    <h1>Object Oriented Programming in JS</h1>
+
+    <h3>4 Pillars of Object-oriented Programming</h3>
+    <ul>
+        <li>Encapsulation</li>
+        <li>Abstraction</li>
+        <li>Inheritance</li>
+        <li>Polymorphism</li>
+    </ul>
+
+    <h3>Encapsulation</h3>
+    <p>Encapsulation is the bundling of data and methods that operate on that data within one unit,<br>
+        typically a class. It restricts direct access to some of an object's components and can <br>
+         prevent the accidental modification of data.
+    </p>
+
+    <h3>Abstraction</h3>
+    <p>Abstraction is the concept of hiding the complex reality while exposing only the necessary parts.<br>
+        It helps to reduce programming complexity and effort.
+        <h4>Example:</h4>
+        <pre>
+            class Car {
+                constructor(make, model) {
+                    this.make = make;
+                    this.model = model;
+                }
+
+                startEngine() {
+                    console.log('Engine started');
+                }
+
+                stopEngine() {
+                    console.log('Engine stopped');
+                }
+            }
+
+            const myCar = new Car('Toyota', 'Corolla');
+            myCar.startEngine(); // Abstracts the internal details of how the engine starts
+        </pre>
+    </p>
+
+    <h3>Inheritance</h3>
+    <p>
+        Inheritance is a mechanism where a new class is derived from an existing class. <br>
+        The new class inherits the properties and methods of the existing class, <br>
+        allowing for code reusability and establishing a relationship between classes.
+    </p>
+
+    <h3>Polymorphism</h3>
+
+    <p>
+        Polymorphism allows objects of different classes to be treated as objects of a common superclass. <br>
+        It enables a single interface to represent different underlying forms (data types).<br>
+        In JavaScript, polymorphism is achieved through method overriding and method overloading.
+        <h4>Example:</h4>
+        <pre>
+            class Animal {
+                speak() {
+                    console.log('Animal speaks');
+                }
+            }
+
+            class Dog extends Animal {
+                speak() {
+                    console.log('Dog barks');
+                }
+            }
+
+            class Cat extends Animal {
+                speak() {
+                    console.log('Cat meows');
+                }
+            }
+
+            const myDog = new Dog();
+            const myCat = new Cat();
+
+            myDog.speak(); // Dog barks
+            myCat.speak(); // Cat meows
+
+        </pre>
+    </p>
+
+    <h4> With polymorphism, we can Refactor ugly switch/case statements</h4>
+
+
+
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
