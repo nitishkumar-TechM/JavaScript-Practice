@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JavaScript</title>
+</head>
+<body>
+    <h1>Function Declarations vs Function Expression</h1>
+
+    <h2>Function Declaration</h2>
+    <p>A function declaration defines a named function that can be called later in the code.</p>
+    <pre>
+        function greet() {
+            console.log("Hello, World!");
+        }
+    </pre>
+    <p>When we defining the function using function declaration syntax, so we can <br>
+        call the function before it is defined in the code.
+        But this is not possible with function expressions.
+    </p>
+
+    <p>The reason for this is because when our JavaScript engine executes this code, <br>
+        it hoists/moves the function declaration to the top of the scope, <br>
+        allowing us to call the function before it is defined.
+    </p>
+
+    <h3>Hoisting</h3>
+    <p>
+        Hoisting is the process of moving declarations to the top of their scope before the code is executed. <br>
+        This means that function declarations are available throughout their scope, even before they are defined in the code. <br>
+        And this done automatically by the JavaScript engine that is executing the code.
+    </p>
+
+    <h4>Hoist (meaning) : To raise, to lift</h4>
+
+    <script src="functions.js"></script>
+    
+</body>
+</html>
