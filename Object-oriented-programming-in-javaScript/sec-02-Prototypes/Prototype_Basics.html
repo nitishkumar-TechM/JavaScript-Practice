@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Prototypes and Prototypical Inheritance</H1>
+
+    <p>
+        In JavaScript, every object has a prototype.<br>
+        A prototype is also an object.<br>
+        Every Object has a prototype object excepts the Root object. <br>
+        All JavaScript objects inherit their properties and methods from their prototype.<br>
+        The prototype of an object can be accessed using the <br>
+        <code>__proto__</code> property or the <code>Object.getPrototypeOf()</code> method. <br>
+        eg.- let x = {};<br>
+        Object.getPrototypeOf(x);<br>
+    </p>
+
+    <p>
+        A prototype is essentially a parent of another object. <br>
+        Every Object in javaScript accepts only a single object.
+    </p>
+
+    <p>
+        The prototype chain is a series of links between objects that allows JavaScript to look up properties and methods.<br>
+        When you try to access a property or method on an object, JavaScript first checks if the object has that property or method.<br>
+        If it doesn't, it looks up the prototype chain until it finds it or reaches the end of the chain.<br>
+        So, this called prototypical inheritance in action.<br>
+    </p>
+    
+</body>
+</html>
